@@ -33,6 +33,8 @@
       min-height: 100vh;
       padding: 2rem 1rem;
       line-height: 1.6;
+      font-size: large;
+      font-weight: bold;
     }
  
     .container {
@@ -549,9 +551,9 @@
       const output = document.getElementById("output");
       output.innerHTML = "";
       setStatus("loading", "Fetching transcript...");
- 
+      base_url="https://youtube-transcript-da5q.onrender.com"
       try {
-        const url = `http://localhost:8000/transcript?link=${encodeURIComponent(link)}`;
+        const url = `${base_url}/transcript?link=${encodeURIComponent(link)}`;
         const res = await fetch(url, { signal: controller.signal });
  
         if (!res.ok) {
